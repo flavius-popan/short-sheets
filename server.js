@@ -94,6 +94,7 @@ app.get('/success',
 
 app.post('/spreadsheet', function(req, res) {
   var body = req.body;
+  var year =  new Date().getFullYear();
   if(body.secret_key !== process.env.SECRET_KEY) {
     return res.status(403).send("Incorrect secret key"); 
   }
@@ -105,7 +106,7 @@ app.post('/spreadsheet', function(req, res) {
   }
   sheets.spreadsheets.values.append({
       spreadsheetId: body.spreadsheet_key,
-      range: body.spreadsheet_range || 'Sheet1',
+      range: body.spreadsheet_range || year,
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       resource: {
