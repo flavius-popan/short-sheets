@@ -2,6 +2,10 @@
 
 A small glitch app for appending to a Google Sheet from iOS Shortcuts
 
+## Customized Changes
+
+The original `server.js` hardcoded `Sheet1` as the place to write data. I updated the code to get the current year and append to that sheet instead. Then I created 10 years worth of year-dated sheets in my main spreadsheet for data to automatically roll over (cheap partition).
+
 ## Getting Started
 
 - You will need to [create an app](https://console.developers.google.com/apis/dashboard) and enable the Google Sheets API.
